@@ -1,0 +1,12 @@
+p {
+    font-family: Bebas Neue, Consolas;
+}
+
+
+body{
+    margin: 0;
+    padding-top: 80px;
+    padding-right: 24px;
+    padding-left: 24px;
+    background-color: black;
+}
