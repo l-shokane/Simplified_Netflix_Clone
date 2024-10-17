@@ -39,12 +39,13 @@
             // Check if the credentials are valid
             if (username === validUsername && password === validPassword) {
                 // Redirect to the main page upon successful login
-                window.location.href = "main.html";
+                window.location.href = "index.html";
             } else {
                 // Display an error message
                 document.getElementById("error-message").innerText = "Invalid username or password.";
             }
         });
     </script>
+    <script src="login.js"></script>
 </body>
 </html>
