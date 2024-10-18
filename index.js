@@ -34,9 +34,9 @@ function showVideoDetails(title) {
     const modalTitle = document.getElementById('modalTitle');
     const modalContent = document.getElementById('modalContent');
     
-    // Set the modal title and content based on the video clicked
-  modalTitle.textContent = title;
-    modalContent.textContent = `Details for ${title}...`;
+
+    modalTitle.textContent = title;
+    modalContent.textContent = `Geralt of Rivia, a brooding professional monster hunter for hire also known as witcher, struggles to keep his humanity in a medieval dark fantasy world ruled by corrupt kings, queens and mages, where poverty, violence and intolerance are rampant, normal humans are sometimes worse than actual monsters and most jobs that`;
 
     // Show modal
     modal.style.display = 'block';
