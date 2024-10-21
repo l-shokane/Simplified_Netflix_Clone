@@ -1,0 +1,35 @@
+.footer{
+    font-family: Bebas Neue, Consolas;
+    background-color: black;
+    color: white;
+    text-align: left;
+    padding: 10px;
+    margin-top: 20px;
+    bottom: 0;
+}
+.youtube-logo{
+    height: 30px;
+    margin-right: 10px;
+}
+.facebook-logo{
+    height: 30px;
+    margin-right: 10px;
+}
+.instagram-logo{
+    height: 30px;
+    margin-right: 10px;
+}
+.x-logo{
+    height: 30px;
+    margin-right: 10px;
+}
+
+.Terms {
+    font-size: 12px;
+    color: white;
+    margin-right: 10px;
+}
+.bottom {
+    display: flex;
+    text-align: right;
+}

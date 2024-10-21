@@ -110,7 +110,7 @@
     align-items: center;
 }
 .search-button .tooltip {
-    font-family: Roboto, Arial;
+    font-family: Bebas Neue, Consolas;
     position: absolute;
     background-color: gray;
     color: white;
