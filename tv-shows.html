@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows - Netflixclone.com</title>
+
+    
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/video.css">
+    <link rel="stylesheet" href="styles/modals.css">
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <img class="netflix-logo" src="icons/netflix-logo.png" alt="Netflix Logo">
+            <div class="menu">
+                <a class="items" href="index.html">Home</a>
+                <a class="items" href="tv-shows.html">TV Shows</a>
+                <a class="items" href="movies.html">Movies</a>
+                <a class="items" href="my-list.html">My List</a>
+            </div>
+            <div class="right-section">
+                <input class="search" type="text" placeholder="Search">
+                <button class="search-button">
+                    <img class="search-icon" src="icons/search-icon.png" alt="Search">
+                </button>
+                <div class="notifications-icon">
+                    <img class="notify-icons" src="icons/notification-icon.png" alt="Notifications">
+                    <div class="notifications-count">4</div>
+                </div>
+                <img class="profile-picture" src="icons/profile-picture.jpeg" alt="Profile Picture">
+            </div>
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+        <p id="modalContent"></p>
+        </div>
+    </div>
+
+    <div class="video-layout">
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/ndl1W4ltcmg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Witcher</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/OftuEZVaGrc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Blacklist</p>
+              
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/dkb-aBaxkVk" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">How to get away with murder</p>
+
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/x8UAUAuKNcU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Rings of Power</p>
+
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/R1C8ygebkng" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Revenge</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/GXrDYboUnnw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Originals</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/gpv7ayf_tyE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Bridgerton</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/11ZozKfRqvA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Wheel of Time</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/2m0Cm2kMOBU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Blood and Water</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/1zgxDFEifyI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Queen Sono</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/OftuEZVaGrc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Blacklist</p>
+
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/_InqQJRqGW4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Money Heist</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/rCj-Fb1OmXg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Big Bang Theory</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/ga1m0wjzscU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">You</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/3wVYjkFfpXM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Sarafina</p>
+   
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/1zgxDFEifyI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Queen Sono</p>
+       
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/3wVYjkFfpXM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Sarafina</p>
+      
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/2m0Cm2kMOBU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Blood and Water</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/Ro9JbgbQHPM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Savage Beauty</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/0-TBHiOReng" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Blood Legacy</p>
+              
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>    
+
+    </div>
+
+    <div class="video-layout">
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/ndl1W4ltcmg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Witcher</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/OftuEZVaGrc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Blacklist</p>
+              
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/dkb-aBaxkVk" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">How to get away with murder</p>
+
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/x8UAUAuKNcU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Rings of Power</p>
+
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/R1C8ygebkng" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Revenge</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/GXrDYboUnnw" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Originals</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/gpv7ayf_tyE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Bridgerton</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/11ZozKfRqvA" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Wheel of Time</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/2m0Cm2kMOBU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Blood and Water</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/1zgxDFEifyI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Queen Sono</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/OftuEZVaGrc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Blacklist</p>
+
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/_InqQJRqGW4" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Money Heist</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/rCj-Fb1OmXg" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">The Big Bang Theory</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/ga1m0wjzscU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">You</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/3wVYjkFfpXM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Sarafina</p>
+   
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="trending">
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/1zgxDFEifyI" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Queen Sono</p>
+       
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/3wVYjkFfpXM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Sarafina</p>
+      
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/2m0Cm2kMOBU" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Blood and Water</p>
+               
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/Ro9JbgbQHPM" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Savage Beauty</p>
+                
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+
+            <div class="video">
+                <iframe src="https://www.youtube.com/embed/0-TBHiOReng" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <p class="video-title">Blood Legacy</p>
+              
+                <div class="video-buttons">
+                    <button class="play-button">Play</button>
+                </div>
+            </div>
+        </div>    
+
+    </div>
+   
+        <script src="index.js"></script>
+    <div class="footer">
+        <div class="footer-section-links">
+                <a href="#">Media Center</a>
+                <a href="#">Buy Gift Cards</a>
+                <a href="#">Redeem Gift Cards</a>
+                <a href="#">Ways to Watch</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Privacy</a>
+                <a href="#">Cookie Preferences</a>
+                <a href="#">Corporate Information</a>
+                <a href="#">Contact Us</a>
+         </div>
+    </div>
+</body>
+</html>
