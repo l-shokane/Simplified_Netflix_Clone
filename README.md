@@ -15,7 +15,7 @@ User Interface: I wanted to design a clean and easy to use user interface. Where
 
 Technologies Used
 Frontend: HTML, CSS, JavaScript
-Backend: Firebase for authentication and hosting
+Backend: Firebase for authentication and hosting, and adding TV Databases
 
 Challenges
 I ran into challenges while setting up the firebase authentication and after multiple trial and error it finally worked. I was also struddling as this is an experience I took on alone to try and see where I was on my journey of learning. Working in a team would have been far more rewarding and less stressful.
