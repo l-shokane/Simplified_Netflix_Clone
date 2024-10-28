@@ -4,14 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <!-- The title of the page is Netflixclone.com -->
         <title>Netflixclone.com</title>
 
-        
+        <!-- Firebase SDK -->
         <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-
+        <!-- Link to the CSS files and fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -26,6 +26,7 @@
 
     </head>
     <body>
+        <!-- The header section of the page -->
         <div class="header">
             <div class="left-section">
                 <img class="netflix-logo" src="icons/netflix-logo.png">
@@ -36,6 +37,7 @@
                   <a class="items" href="my-list.html">My List</a>
 
                 </div>
+                <!-- The search bar and notification icons -->
                 <div class="right-section">
                     <input class="search" type="text" placeholder="Search">
                         <div class="dropdown" id="searchResults"></div>                    
@@ -54,7 +56,7 @@
         </div>
   
  
-    <!-- Modal Structure -->
+    <!-- Modal Structure for videos details -->
         <div id="videoModal" class="modal">
             <div class="modal-content">
                 <span id="closeModal" class="close">&times;</span>
@@ -62,7 +64,7 @@
             <p id="modalContent"></p>
             </div>
         </div>
-
+        <!-- The main section of the page -->
         <div class="video-layout">
             <div class="trending">Trending Now!
                 <div class="video">
@@ -291,7 +293,7 @@
                     </div>
                 </div>
             </div>    
-
+        <!-- The footer section of the page -->
         </div>
         <div class="footer">
                 <div class="footer-section-links">
