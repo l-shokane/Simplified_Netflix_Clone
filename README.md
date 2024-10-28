@@ -22,7 +22,7 @@ I ran into challenges while setting up the firebase authentication and after mul
 Trying to implement a smooth user experience was challenging, trying to make sure the video streaming feature was working. Issues with cross-browser compatibility was also a headache and a half
 
 Future Improvements
-Going foward with this clone I would like to add more features like personalized recommendations and a search function which will allow users to search for a particular show and get results. I will also implement payment features for premium content access. I will improve video perfomance like when you hover over a video it starts playing the trailer.
+Going foward with this clone I would like to add more features like personalized recommendations and a search function which will allow users to search for a particular show and get results. I will also implement payment features for premium content access. I will improve video perfomance like when you hover over a video it starts playing the trailer. Also input a full screen feature for when you play the videos.
 
 
 Conclusion
