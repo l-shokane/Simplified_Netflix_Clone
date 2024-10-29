@@ -1,6 +1,8 @@
+/* Styles for the video component */
 .video {
     width: 100%;
   }
+  
   .video-title{
       margin-top: 0;
       font-size: 14px;
