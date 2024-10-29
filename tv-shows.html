@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TV Shows - Netflixclone.com</title>
 
-    
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-
+    <!-- Custom CSS links and fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="styles/modals.css">
 </head>
 <body>
+    <!-- Header -->
     <div class="header">
         <div class="left-section">
             <img class="netflix-logo" src="icons/netflix-logo.png" alt="Netflix Logo">
@@ -45,7 +46,7 @@
             </div>
         </div>
     </div>
-
+    <!-- Modal -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
             <span id="closeModal" class="close">&times;</span>
@@ -53,7 +54,7 @@
         <p id="modalContent"></p>
         </div>
     </div>
-
+    <!-- Video Layout -->
     <div class="video-layout">
         <div class="trending">
             <div class="video">
@@ -515,8 +516,9 @@
         </div>    
 
     </div>
-   
+        <!--adds the index.js-->
         <script src="index.js"></script>
+        <!--adds the footer-->
         <div class="footer">
             <div class="footer-section-links">
                 <div class="Social-Media"> Connect with Us on Social Media
